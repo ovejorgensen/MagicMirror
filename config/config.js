@@ -1,3 +1,5 @@
+import * as env from '../env.json';
+
 /* Magic Mirror Config Sample
  *
  * By Michael Teeuw https://michaelteeuw.nl
@@ -60,17 +62,6 @@ let config = {
 						url: process.env.CALENDAR_URL,
 					}
 				]
-			}
-		},
-		{
-			module: "weather",
-			position: "top_right",
-			config: {
-				weatherProvider: "openweathermap",
-				type: "current",
-				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "YOUR_OPENWEATHER_API_KEY"
 			}
 		},
 		{
