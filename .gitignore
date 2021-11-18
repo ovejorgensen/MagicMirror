@@ -60,7 +60,6 @@ Temporary Items
 .Trash-*
 
 # Ignore all modules except the default modules.
-/modules/**
 !/modules/default
 !/modules/default/**
 !/modules/README.md**
@@ -82,4 +81,3 @@ Temporary Items
 *.bak
 
 .env
-env.json
