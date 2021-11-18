@@ -51,20 +51,16 @@ let config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Calendar",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
+						url: process.env.CALENDAR_URL,
 					}
 				]
 			}
-		},
-		{
-			module: "compliments",
-			position: "lower_third"
 		},
 		{
 			module: "weather",
