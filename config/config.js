@@ -1,4 +1,4 @@
-import * as env from '../env.json';
+import env from '../env.json';
 
 /* Magic Mirror Config Sample
  *
