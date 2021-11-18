@@ -59,7 +59,7 @@ let config = {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: process.env.CALENDAR_URL,
+						url: env.CALENDAR_URL,
 					}
 				]
 			}
