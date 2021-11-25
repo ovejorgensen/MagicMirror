@@ -8,7 +8,6 @@ module.exports = NodeHelper.create({
         this.config = null;
         this.cityBikeUrl = '';
 	},
-
 	socketNotificationReceived: function(notification, payload) {
 		let self = this;
         if(notification === 'GET_CITYBIKES') {
@@ -17,14 +16,13 @@ module.exports = NodeHelper.create({
             this.getCityBikes();
         }
 	},
-
 	getCityBikes: function() {
 		let self = this;
-        let cityBikeData = {};
-
         request({url: this.cityBikeUrl, method: 'GET'}, function(error, response, message) {
-            if (!error && (response.statusCode === 200 || response.statusCode === 304)) 
-                cityBikeData = JSON.parse(message);
+            if (!error && (response.statusCode === 200 || response.statusCode === 304)) {
+                const cityBikeData = JSON.parse(message);
+                self.sendSocketNotification('YR_FORECAST_DATA', cityBikeData);
+            }
             setTimeout(function() { self.getCityBikes(); }, self.config.updateInterval);
         });
 	},
