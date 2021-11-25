@@ -8,8 +8,6 @@ Module.register("MMM-Kolumbus-CityBike", {
 		return ["mmm-kolumbus-citybike.css"];
 	},
     start: function () {
-        Log.log("hello!!!");
-        console.log("hello");
         this.cityBikeInfoList = null;
         this.loaded = false;
         this.getCityBikes(this.config.cityBikeUrl);
