@@ -1,5 +1,3 @@
-import env from '../env.json';
-
 /* Magic Mirror Config Sample
  *
  * By Michael Teeuw https://michaelteeuw.nl
@@ -59,7 +57,7 @@ let config = {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: env.CALENDAR_URL,
+						url: "",
 					}
 				]
 			}
