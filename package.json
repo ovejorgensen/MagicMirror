@@ -5,7 +5,7 @@
 	"main": "js/electron.js",
 	"scripts": {
 		"start": "node_modules/.bin/electron js/electron.js",
-		"start:dev":"./node_modules/.bin/electron js/electron.js dev",
+		"start:dev": "./node_modules/.bin/electron js/electron.js dev",
 		"server": "node ./serveronly",
 		"install": "echo \"Installing vendor files ...\n\" && cd vendor && npm install --loglevel=error",
 		"install-fonts": "echo \"Installing fonts ...\n\" && cd fonts && npm install --loglevel=error",
@@ -70,6 +70,7 @@
 		"electron": "^13.5.1"
 	},
 	"dependencies": {
+		"axios": "^0.24.0",
 		"colors": "^1.4.0",
 		"console-stamp": "^3.0.3",
 		"digest-fetch": "^1.2.1",

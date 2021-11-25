@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-var NodeHelper = require('node_helper');
-var request = require('request');
+const NodeHelper = require('node_helper');
+const axios = require('axios');
 
 module.exports = NodeHelper.create({
 	start: function() {
@@ -18,12 +18,11 @@ module.exports = NodeHelper.create({
 	},
 	getCityBikes: function() {
 		let self = this;
-        request({url: this.cityBikeUrl, method: 'GET'}, function(error, response, message) {
-            if (!error && (response.statusCode === 200 || response.statusCode === 304)) {
-                const cityBikeData = JSON.parse(message);
-                self.sendSocketNotification('YR_FORECAST_DATA', cityBikeData);
-            }
-            setTimeout(function() { self.getCityBikes(); }, self.config.updateInterval);
-        });
+
+        axios.get(self.cityBikeUrl)
+            .then(function(response) {
+                const cityBikeData = JSON.parse(response.data);
+                self.sendSocketNotification('CITYBIKES_RESULT', cityBikeData);
+            });
 	},
 });

@@ -62,12 +62,19 @@ let config = {
 				]
 			}
 		},
-		{
-			module: 'MMM-YrNow',
-			position: 'top_right',
+		// {
+		// 	module: 'MMM-YrNow',
+		// 	position: 'top_right',
+		// 	config: {
+		// 		locationId: '1-15183',
+		// 		showWeatherForecast: true
+		// 	}
+		// },
+		{ 
+			module: 'MMM-Kolumbus-CityBike',
+			position: 'bottom_left',
 			config: {
-				locationId: '1-15183',
-				showWeatherForecast: true
+				stationIds: ["798196b7-b179-4270-bacd-221373f77202", "d7603c16-5156-4179-81e2-5127a2af19fd", "38187088-3f84-45c2-890a-df7efc502ce8"],
 			}
 		},
 		{
